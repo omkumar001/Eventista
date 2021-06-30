@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <title>Eventista</title>
+
+
+    <script>
+      function checkpass(form)
+      {
+         var pass1=form.password1.value;
+         var pass2=form.password2.value;
+  
+         console.log(pass1+" "+pass2);
+  
+         if(pass1==pass2){
+             return true;
+         }
+         else{
+            return false;
+         }
+      }
+
+
+      function yesnoCheck() {
+      if (document.getElementById('yesCheck').checked) {
+        document.getElementById('ifYes').style.visibility = 'visible';
+       }
+    else {
+    document.getElementById('ifYes').style.visibility = 'hidden';
+    // document.getElementById('ifYes').height='0';
+   // document.getElementById('mybutton').style;
+    }
+
+      }
+
+    
+  </script>
+
+   
+
+  </head>
+  <body>
+    <!-- Navbar -->
+
+    <div class="container-fluid bclr text-light">
+      <!-- <div class="container"> -->
+      <div class="row">
+        <div class="col-2 mt-2 pl-5">
+          <a class="linktext" href="/"><h3>Eventista</h3></a>
+        </div>
+        <div class="col-6 mt-2 text-left">
+          <div class="inp">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"
+                  ><i class="fa fa-search" aria-hidden="true"></i
+                ></span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search for Events..."
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <ul class="items">
+            <li>
+              <a href="/login"
+                ><button class="btn-info mybtn">Log In</button></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- </div> -->
+    </div>
+    <!-- Navbar end -->
+
+    <img class="bg-image signup" src="Images/event_bg.jpg" alt="" />
+
+    <!-- form -->
+    <div class="login-page">
+      <div class="form">
+
+
+          <!-- register form  -->
+          <form class="register-form" onSubmit = "return checkpass(this)" action="/signup" method="post" autocomplete="off">
+
+            <p>Choose your Role: </p>
+
+                <label class="radio-inline">
+                  <input type="radio"  name="role" onclick="javascript:yesnoCheck();" id="yesCheck"  value="attendee"> Attendee
+                </label>
+                <label class="radio-inline">
+                  <input type="radio"  name="role" onclick="javascript:yesnoCheck();"  id="noCheck"  value="organiser">Organiser
+                </label>
+
+            <input class="name" type="text" name="name" placeholder="Name" title="Use letters" required/>
+            <input class="username" type="text" name="username" pattern="[A-Za-z0-9]+" placeholder="Username"  title="Use letters and numbers" required/>
+            <input type="email"  id="email"  name="email" name="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email address" required/>
+              
+            <input type="password" class="password" id="pwd" name="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+            title="Use only numbers, uppercase and lowercase letters, and minimum 6 characters and at least 1 of each type" placeholder="Password" required/>
+  
+            <input class="confirmpassword" type="password" name="password2" placeholder="Confirm password" required/>
+            
+            <span id="ifYes" style="visibility:hidden " >
+            <input class="input-text js-input" type="date"  name="dob" value="<%= doob %>" placeholder="D.O.B" />
+          </span>
+
+          <button id="mybutton" type="submit">Sign Up</button>
+  
+            <p class="message">Already registered? <a href="/login">Log In</a></p>
+  
+          </form>
+          <!-- register form ends -->
+
+      </div>
+    </div>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="js/script.js"></script>
+  </body>
+</html>

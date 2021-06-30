@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <title>Eventista</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+
+    <div class="container-fluid bclr text-light">
+      <!-- <div class="container"> -->
+      <div class="row">
+        <div class="col-2 mt-2 pl-5">
+          <a class="linktext" href="/"><h3>Eventista</h3></a>
+        </div>
+        <div class="col-6 mt-2 text-left">
+          <div class="inp">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"
+                  ><i class="fa fa-search" aria-hidden="true"></i
+                ></span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search for Events..."
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <ul class="items">
+            <li>
+              <a href="/signup"
+                ><button class="btn-info mybtn">Sign Up</button></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- </div> -->
+    </div>
+    <!-- Navbar end -->
+
+    <img class="bg-image" src="Images/event_bg.jpg" alt="" />
+
+    <!-- form -->
+    <div class="login-page">
+      <div class="form">
+
+
+
+         <!-- login form -->
+         <form class="login-form"  action="/login" method="post" autocomplete="off">
+           <input class="username" name="username" type="text" placeholder="username" required />
+          <span class="warn"><small><%= warn.erruname %></small></span>
+          <input class="password" name="password" type="password"  placeholder="password" required/>
+            <span class="warn"><small><%= warn.errpass %></small></span>
+
+          <button id="mybutton" type="submit" >Log In</button>
+
+          <p class="message">Forgot Password?</p>
+          <p class="message">Not registered? <a href="/signup">Register Now</a></p>
+        </form>
+         <!-- login form ends -->
+      
+
+      </div>
+    </div>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

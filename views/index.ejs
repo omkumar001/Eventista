@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap 4 Scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <title>Eventista</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="container-fluid bclr text-light">
+      <div class="row">
+        <div class="col-2 mt-2 pl-5">
+          <a  class="linktext" href="/"><span class="evntis">Eventista</span></a>
+        </div>
+        <div class="col-6 mt-2 text-left">
+          <div class="inp">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"
+                  ><i class="fa fa-search" aria-hidden="true"></i
+                ></span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search for Events..."
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <ul class="items">
+            
+
+             <% if( username == "")  { %> 
+              <li class="">
+              <a href="/login"
+                ><button class="btn-info mybtn">Log In</button></a>
+              </li>
+           <% } else  { %>   
+              
+          <%  if(role == "organiserProfile") { %>
+              <li class="">
+              <a href="/createEvent/<%= username %>" ><button class="btn-info mybtn">Create Event</button></a>
+              </li>
+            <% } %>
+
+            <li class="">
+            <a href="/<%= role %>/<%= username %>"
+            ><button class="btn-info mybtn">Hi ,<%= username %></button></a>
+          </li>
+           <% } %> 
+           
+            
+          
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <!-- Navbar end -->
+  
+    <div
+      id="myCarousel"
+      class="carousel slide"
+      data-ride="carousel"
+      data-interval="3000"
+      data-pause="hover"
+    >
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="images" src="images/crausel1 fin.png" />
+        </div>
+        <div class="carousel-item">
+          <img class="images" src="images/crausel2 fin.png" />
+        </div>
+        <div class="carousel-item">
+          <img class="images" src="images/crausel3 fin.png" />
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#myCarousel"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#myCarousel"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+
+    <img class="bg-image indexBG" src="Images/indexBG.png" alt="" />
+
+    <!--  event card -->
+
+
+
+    <div class="page-content">
+      <div class="container-fluid pl-5">
+        <div class="row mt-5">
+          <h2 class="heading">Events</h2>
+        </div>
+        <div class="row">
+          <div class="line"></div>
+        </div>
+      </div>
+      
+      <div class="container-fluid event-card">
+        <div class="row pl-3">
+         
+          <% for( let i = 0; i < EvePosters.length; i++ ) { %>
+            <div class="card mt-4 ml-5 popular_card">
+              <a class="cardhvr" href="/description/<%= EvePosters[i].EventId %> "
+                ><img
+                  class="card-img-top pop_image"
+                  src="<%= EvePosters[i].Poster %>" 
+                  alt="Card image cap"
+              /></a>
+            </div>
+          <% } %>
+          
+        </div>
+      </div>
+
+      <div class="container-fluid pl-5 popular-card">
+        <div class="row mt-5">
+          <h2 class="heading">Popular Events</h2>
+        </div>
+        <div class="row">
+          <div class="line"></div>
+        </div>
+      </div>
+      <!-- event card end -->
+
+      <!-- popular event card -->
+
+      <div class="container-fluid event-card">
+        <div class="row pl-3">
+         
+          <% for( let i = 0; i < 2; i++ ) { %>
+            <div class="card mt-4 ml-5 popular_card">
+              <a class="cardhvr" href="/description/<%= EvePosters[i].EventId %> "
+                ><img
+                  class="card-img-top pop_image"
+                  src="<%= EvePosters[i].Poster %>" 
+                  alt="Card image cap"
+              /></a>
+            </div>
+          <% } %>
+          
+
+        </div>
+        </div>
+      <!-- popular event card  ends-->
+
+    </div>
+
+<%- include("footer"); -%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="page-content">
+      <div class="container-fluid pl-5">
+        <div class="row mt-5">
+          <h2 class="heading">Events</h2>
+        </div>
+        <div class="row">
+          <div class="line"></div>
+        </div>
+      </div>
+      
+      <div class="container-fluid event-card">
+        <div class="row pl-3">
+          <div class="card mt-4 ml-5 popular_card">
+            <a class="cardhvr" href="/saturnlia"
+              ><img
+                class="card-img-top pop_image"
+                src="img/Saturnlia.png"
+                alt="Card image cap"
+            /></a>
+          </div>
+
+          <div class="card mt-4 ml-4 popular_card" >
+            <a class="cardhvr" href="/openmic"
+              ><img
+                class="card-img-top pop_image"
+                src="img/open-mic.png"
+                alt="Card image cap"
+            /></a>
+          </div>
+
+          <div class="card mt-4 ml-4 popular_card">
+            <a class="cardhvr" href="/musicfest"
+              ><img
+                class="card-img-top pop_image"
+                src="img/fiery-art.png"
+                alt="Card image cap"
+            /></a>
+          </div>
+
+          <div class="card mt-4 ml-4 popular_card" >
+            <a class="cardhvr" href="/triviamaster"
+              ><img
+                class="card-img-top pop_image"
+                src="img/trivia.png"
+                alt="Card image cap"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid pl-5 popular-card">
+        <div class="row mt-5">
+          <h2 class="heading">Popular Events</h2>
+        </div>
+        <div class="row">
+          <div class="line"></div>
+        </div>
+      </div> -->
+      <!-- event card end -->
+
+
+
+
+      <!-- popular event card -->
+
+      <!-- <div class="container-fluid event-card">
+        <div class="row pl-3">
+          
+          <div class="card mt-4 ml-5 popular_card">
+            <a class="cardhvr" href="/saturnlia"
+              ><img
+                class="card-img-top pop_image"
+                src="img/Saturnlia.png"
+                alt="Card image cap"
+            /></a>
+          </div>
+
+          <div class="card mt-4 ml-4 popular_card" >
+            <a class="cardhvr" href="/openmic"
+              ><img
+                class="card-img-top pop_image"
+                src="img/open-mic.png"
+                alt="Card image cap"
+            /></a>
+          </div>
+
+        </div>
+      </div> -->
+      <!-- popular event card  ends-->
+
+    <!-- </div>
+
+    <%- include("footer"); -%> -->
+
+
+
+
+
+
+
+
+
+
+
+
+   

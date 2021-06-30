@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventista</title>
+
+    <link rel="stylesheet" href="/css/book.css" />
+
+
+    <script>
+
+      function getTotal(){
+      
+               selectElement = document.querySelector("#tickets");
+              selectCounter = document.querySelector("#ticketcounter").value;
+              output = selectElement.value * selectCounter;
+              document.querySelector("#totalP").value = output;
+      };
+
+      function getType(){
+        selectElement = document.querySelector("#tickets").selectedIndex;
+        output = "";
+        if(selectElement === 0){
+          output = "Gold";
+        }else if(selectElement === 1){
+          output = "Diamond";
+        }else {
+          output = "Platinum";
+        }
+        document.querySelector(".tType").innerHTML = output;
+        document.querySelector("#customerOrder").value = output;
+      }
+          
+          </script>
+          
+
+  </head>
+
+  <body>
+    <div class="pay-now">
+      <h1>Booking Info</h1>
+
+      <form action="/booking/<%= EId %>" method="POST">
+        <label for="customerName">Full Name <em>&#x2a;</em></label>
+        <input id="customerName"  required="" type="text" />
+
+        <label for="ticketType">Ticket Type</label>
+
+        <select name="Ticket" id="tickets" onclick="getType()">
+          <option class="opt" value= <%= Gold %> >Gold (Rs. <%= Gold %>)</option>
+          <option class="opt" value= <%= Diamond %> >Diamond (Rs. <%= Diamond %>)</option>
+          <option class="opt" value= <%= Platinum %>>Platinum (Rs. <%= Platinum %> )</option>
+        </select>
+
+        <label for="CountTickets">No of Tickets</label>
+        <input
+          type="number"
+          id="ticketcounter"
+          name="NOTickets"
+          min="1"
+          max="100"
+          onclick="getTotal()"
+        />
+
+        <label  for= "totalPrice">
+          Total for <span class="tType" style="font-size: medium;"> </span> Tickets: 
+        </label>
+        <input type="number" id="totalP" name="totalPrice" value="">
+        <button type="submit" id="customerOrder" name="TypeOfticket" value="" >Pay Now</button>
+      </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  
+  </body>
+</html>
