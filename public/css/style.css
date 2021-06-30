@@ -1,0 +1,317 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.bclr {
+  background-color: rgb(30, 2, 44);
+}
+.items {
+  list-style-type: none;
+  display: flex;
+  float: right;
+}
+.items li {
+  padding-right: 15px;
+}
+.mybtn {
+  height: 30px;
+  width: 100px;
+  margin-top: 13px;
+  border-style: none;
+  outline-offset: none;
+  background: linear-gradient(to right, #80006b, #ff0076);
+  color: white;
+  box-shadow: 0 0 10px 0 #80006b;
+}
+.font {
+  font-size: 25px;
+}
+.linktext {
+  color: #fff;
+}
+
+.linktext:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.inp {
+  width: 300px;
+}
+/*  */
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #1e022c;
+  color: white;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 10px 0 #80006b;
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  /* text-transform: uppercase; */
+  outline: 0;
+  background: #343a40;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button {
+  background: linear-gradient(to right, #80006b, #ff0076);
+  color: white;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: white;
+  font-size: 12px;
+}
+.form .message a {
+  color: #ff0076;
+  text-decoration: none;
+}
+/* .form .register-form {
+  display:none;
+} */
+.form .Forgot {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before,
+.container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #ef3b3a;
+}
+
+.heading {
+  color: rgb(37, 72, 189);
+  font-weight: bold;
+}
+
+.line {
+  height: 3px;
+  width: 240px;
+  background: linear-gradient(to right, #80006b, #ff0076);
+  animation-name: line;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes line {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 240px;
+  }
+}
+
+.cardhvr {
+  transition: 0.5s;
+  overflow: hidden;
+  display: block;
+  border-radius: 16px;
+  border: 0.5px solid white;
+}
+
+.cardhvr:hover img {
+  transform: scale(1.1);
+  transition: 0.5s ease-in;
+}
+
+/* .float{
+  float: left;
+  display: flex;
+} */
+/* .mar{
+  margin-left: 60px;
+} */
+.carousel-cell {
+  width: 65%;
+  margin-right: 10px;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+}
+.image1 {
+  object-fit: cover;
+}
+.evntis {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.images {
+  width: 100%;
+  height: 280px;
+  background-size: cover;
+}
+
+.bg-image {
+  width: 100%;
+  height: 92%;
+  position: absolute;
+  z-index: -1;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  background-size: cover;
+}
+
+.signup {
+  height: 120%;
+}
+
+.indexBG {
+  height: 160%;
+  filter: blur(4px);
+  -webkit-filter: blur(2px);
+}
+
+.indexBGPastEvent {
+  height: 115%;
+}
+
+.BG {
+  height: 120%;
+}
+
+.page-content {
+  margin: 10% 5%;
+}
+
+.popular_card {
+  width: 15rem;
+  height: 20rem;
+}
+
+.pop_image {
+  width: 15rem;
+  height: 20rem;
+}
+
+.footer {
+  padding: 3% 18% 2%;
+  background-color: #374045;
+  text-align: center;
+  color: #707070;
+  /* position: absolute; */
+}
+
+/* .foot_icons {
+  color: #fff;
+} */
+
+.foot-href:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.event-card {
+  margin-top: 1%;
+}
+
+.popular-card {
+  margin-top: 8%;
+}
+
+.foot_button button {
+  margin-right: 0.5%;
+  margin-left: 0.5%;
+}
+
+.organiser-profile:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.indent {
+  text-align: center;
+  padding-top: 0.001%;
+  padding-bottom: 70px;
+}
+
+.organiser-profile:hover {
+  text-decoration: none;
+  color: white;
+}
+
+ul.social {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+li.social {
+  float: left;
+}
+
+.orgUsername:hover {
+  text-decoration: none;
+}
+
+.attendeProfile:hover,
+.organiserProfile:hover {
+  text-decoration: none;
+  color: white;
+}
